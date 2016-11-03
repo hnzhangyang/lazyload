@@ -1,7 +1,7 @@
 "use strict";
 var Lazyload = function(elements,options){
 	var that = this;
-	var settings = {
+	this.settings = {
 		threshold      : 0 ,         // 临界值
 		event          : 'scroll' ,  // 事件类型
 		container      : window,     // 容器
@@ -11,20 +11,20 @@ var Lazyload = function(elements,options){
  	}
 	
 	for(var item in options){
-		settings[item] = options[item];
+		this.settings[item] = options[item];
 	}
 	
 	for(var i = 0 ; i < elements.length ; i++){
 		var src = elements[i].getAttribute('src');
 		if(!src || src == ''){
-			elements[i].src = settings.placeholder;
+			elements[i].src = this.settings.placeholder;
 		}
-		that.update(settings,elements[i]);
+		that.update(elements[i]);
 	}
 	
-	settings.container.onscroll = function(){
+	this.settings.container.onscroll = function(){
 		for(var i = 0 ; i < elements.length ; i++){
-			that.update(settings,elements[i]);
+			that.update(elements[i]);
 		}
 	}
 }
@@ -32,20 +32,20 @@ var Lazyload = function(elements,options){
 
 Lazyload.prototype = {
 	// 判断是否触发图片更新
-	update : function(setting,element){
-		if(this.abovethetop(setting,element) && this.abovetheleft(setting,element)){
-			setting.apper && setting.apper(element);
+	update : function(element){
+		if(this.abovethetop(element) && this.abovetheleft(element)){
+			this.settings.apper && this.settings.apper(element);
 			this.change(element);
 		}
 	},
 	// 判断是否接近
-	abovethetop : function(setting,element){
+	abovethetop : function(element){
 		var fold,
 			containerHeight;
-		if(element.getAttribute('src') != setting.placeholder){
+		if(element.getAttribute('src') != this.settings.placeholder){
 			return false;
 		}
-		if(setting.container == undefined || setting.container == window){
+		if(this.settings.container == undefined || this.settings.container == window){
 			if (window.pageYOffset) {  
 	        	fold = window.pageYOffset;
 			}
@@ -54,19 +54,19 @@ Lazyload.prototype = {
 	        }	           
 	        containerHeight = document.documentElement.clientHeight
 		}else{
-			fold = setting.container.scrollTop;
-			containerHeight = setting.container.clientHeight
+			fold = this.settings.container.scrollTop;
+			containerHeight = this.settings.container.clientHeight
 		}
 		fold = fold ? fold : 0; 
-		return fold + containerHeight + setting.threshold >= element.offsetTop;
+		return fold + containerHeight + this.settings.threshold >= element.offsetTop;
 	},
-	abovetheleft : function(setting,element){
+	abovetheleft : function(element){
 		var fold,
 			containerWidth;
-		if(element.getAttribute('src') != setting.placeholder){
+		if(element.getAttribute('src') != this.settings.placeholder){
 			return false;
 		}
-		if(setting.container == undefined || setting.container == window){
+		if(this.settings.container == undefined || this.settings.container == window){
 			if (window.pageYOffset) {  
 	        	fold = window.pageXOffset;
 			}
@@ -75,11 +75,11 @@ Lazyload.prototype = {
 	        }	
 	        containerWidth = document.documentElement.clientWidth
 		}else{
-			fold = setting.container.scrollLeft;
-			containerWidth = setting.container.clientWidth
+			fold = this.settings.container.scrollLeft;
+			containerWidth = this.settings.container.clientWidth
 		}
 		fold = fold ? fold : 0; 
-		return fold + containerWidth + setting.threshold >= element.offsetLeft;
+		return fold + containerWidth + this.settings.threshold >= element.offsetLeft;
 	},
 	// 改变默认图片
 	change : function(element){
