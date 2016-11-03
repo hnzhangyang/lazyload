@@ -83,7 +83,7 @@ Lazyload.prototype = {
 	},
 	// 改变默认图片
 	change : function(element){
-		var originalSrc = element.getAttribute('data_attribute');
+		var originalSrc = element.getAttribute(this.settings.placeholder);
 		if(originalSrc){
 			element.src = originalSrc;
 		};	
