@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>lazyload</title>
+        <script src="lazyload.js"></script>
+        <style>
+            img{
+                display:block;
+                margin-top:200px;
+            }
+        </style>
+    </head>
+    <body>
+        <img src="http://img6.bdstatic.com/img/image/smallpic/chongwu1230.jpeg" data-original="http://img6.bdstatic.com/img/image/smallpic/mingxing1222.jpg">
+        <img src="http://img6.bdstatic.com/img/image/smallpic/chongwu1230.jpeg" data-original="http://img6.bdstatic.com/img/image/smallpic/mingxing1222.jpg">
+        <img src="http://img6.bdstatic.com/img/image/smallpic/chongwu1230.jpeg" data-original="http://img6.bdstatic.com/img/image/smallpic/mingxing1222.jpg">
+        <img src="http://img6.bdstatic.com/img/image/smallpic/chongwu1230.jpeg" data-original="http://img6.bdstatic.com/img/image/smallpic/mingxing1222.jpg">
+        <img src="http://img6.bdstatic.com/img/image/smallpic/chongwu1230.jpeg" data-original="http://img6.bdstatic.com/img/image/smallpic/mingxing1222.jpg">
+        <img src="http://img6.bdstatic.com/img/image/smallpic/chongwu1230.jpeg" data-original="http://img6.bdstatic.com/img/image/smallpic/mingxing1222.jpg">
+        <img src="http://img6.bdstatic.com/img/image/smallpic/chongwu1230.jpeg" data-original="http://img6.bdstatic.com/img/image/smallpic/mingxing1222.jpg">
+        <img src="http://img6.bdstatic.com/img/image/smallpic/chongwu1230.jpeg" data-original="http://img6.bdstatic.com/img/image/smallpic/mingxing1222.jpg">
+        <img src="http://img6.bdstatic.com/img/image/smallpic/chongwu1230.jpeg" data-original="http://img6.bdstatic.com/img/image/smallpic/mingxing1222.jpg">
+        <img src="http://img6.bdstatic.com/img/image/smallpic/chongwu1230.jpeg" data-original="http://img6.bdstatic.com/img/image/smallpic/mingxing1222.jpg">
+        <img src="http://img6.bdstatic.com/img/image/smallpic/chongwu1230.jpeg" data-original="http://img6.bdstatic.com/img/image/smallpic/mingxing1222.jpg">
+        <img src="http://img6.bdstatic.com/img/image/smallpic/chongwu1230.jpeg" data-original="http://img6.bdstatic.com/img/image/smallpic/mingxing1222.jpg">
+        <img src="http://img6.bdstatic.com/img/image/smallpic/chongwu1230.jpeg" data-original="http://img6.bdstatic.com/img/image/smallpic/mingxing1222.jpg">
+        <img src="http://img6.bdstatic.com/img/image/smallpic/chongwu1230.jpeg" data-original="http://img6.bdstatic.com/img/image/smallpic/mingxing1222.jpg">
+        <img src="http://img6.bdstatic.com/img/image/smallpic/chongwu1230.jpeg" data-original="http://img6.bdstatic.com/img/image/smallpic/mingxing1222.jpg">
+        <img src="http://img6.bdstatic.com/img/image/smallpic/chongwu1230.jpeg" data-original="http://img6.bdstatic.com/img/image/smallpic/mingxing1222.jpg">
+        <img src="http://img6.bdstatic.com/img/image/smallpic/chongwu1230.jpeg" data-original="http://img6.bdstatic.com/img/image/smallpic/mingxing1222.jpg">
+        <img src="http://img6.bdstatic.com/img/image/smallpic/chongwu1230.jpeg" data-original="http://img6.bdstatic.com/img/image/smallpic/mingxing1222.jpg">
+        <img src="http://img6.bdstatic.com/img/image/smallpic/chongwu1230.jpeg" data-original="http://img6.bdstatic.com/img/image/smallpic/mingxing1222.jpg">
+        <img src="http://img6.bdstatic.com/img/image/smallpic/chongwu1230.jpeg" data-original="http://img6.bdstatic.com/img/image/smallpic/mingxing1222.jpg">
+        <img src="http://img6.bdstatic.com/img/image/smallpic/chongwu1230.jpeg" data-original="http://img6.bdstatic.com/img/image/smallpic/mingxing1222.jpg">
+        <img src="http://img6.bdstatic.com/img/image/smallpic/chongwu1230.jpeg" data-original="http://img6.bdstatic.com/img/image/smallpic/mingxing1222.jpg">
+        <img src="http://img6.bdstatic.com/img/image/smallpic/chongwu1230.jpeg" data-original="http://img6.bdstatic.com/img/image/smallpic/mingxing1222.jpg">
+        <img src="http://img6.bdstatic.com/img/image/smallpic/chongwu1230.jpeg" data-original="http://img6.bdstatic.com/img/image/smallpic/mingxing1222.jpg">
+        <img src="http://img6.bdstatic.com/img/image/smallpic/chongwu1230.jpeg" data-original="http://img6.bdstatic.com/img/image/smallpic/mingxing1222.jpg">
+    </body>
+    <script>
+        var imgArr = document.getElementsByTagName('img');
+        var lazyload = new Lazyload(imgArr, {
+            threshold : 0 ,             
+            event:'scroll', 
+            container:window,
+            data_attribute:'data-original',
+            apper:function(target){
+                console.log('apper::' + target );
+            }
+        })
+    </script>
+</html>

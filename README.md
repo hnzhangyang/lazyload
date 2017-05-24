@@ -23,7 +23,7 @@
   <script>
   // 获取目标对象
   var imgArr = document.getElementsByTagName('img');
-	var box = document.getElementById('box');
+  var box = document.getElementById('box');
   // 实例化插件
     new Lazyload(imgArr,{
       container:box,
@@ -43,7 +43,7 @@
 ### data_attribute
 标记名称,选填，默认 'data-original'
 ### apper
-图片即将更换时的回调函数，选填，默认 null
+图片即将更换时的回调函数，接受一个参数（当前图片），选填，默认 null
 ### placeholder
 占位图片，选填，默认为一段图片的 base64值 
 
