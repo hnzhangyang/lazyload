@@ -9,7 +9,7 @@
 
 
 
-##Examples
+## Examples
 
 ```html
   <script>
@@ -25,7 +25,7 @@
     })
   </script>
 ```
-##主要参数
+## 主要参数
 ```js
     /**
     *  @param {number} threshold     临界值，选填，默认 0 
@@ -36,5 +36,5 @@
     *  @param {string} placeholder 占位图片，选填，默认为一段图片的 base64值 
     **/
 ```
-##Notes
+## Notes
  - 注意插件接受的参数都为原生 javaScript 对象
